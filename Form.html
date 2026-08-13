@@ -1,0 +1,72 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Document</title>
+</head>
+<body>
+    <!-- Form goes here -->
+     <form action="" method="post">
+         <!-- Form action and method can be specified here -->
+
+        <label for="name">Name:</label>
+        <input type="text" id="name" name="name" required><br><br>
+
+        <label for="email">Email:</label>
+        <input type="email" id="email" name="email" required><br><br>
+
+        <label for="message">Message:</label><br>
+        <textarea id="message" name="message" rows="4" cols="50" required></textarea><br><br>
+
+        <input type="submit" value="Submit">
+
+        </form>
+        
+        <hr>
+
+        <form action="" >
+
+            <fieldset>
+                <legend>Additional Information</legend>
+                <!-- Additional form fields can be added here -->
+                 <!-- <label for="country">Country:</label>
+                <select id="country" name="country"> 
+                    <option value="" hidden>-------------Select a country---------- </option>
+                    <option value="us">United States</option>
+                    <option value="ca">Canada</option>
+                    <option value="uk">United Kingdom</option>
+                </select><br><br> -->
+                <!-- dropdown menu -->
+                  <strong>select your field</strong>
+             <select name="" id="">
+                <option value="" hidden>------------CHOOSE HERE-----------</option>
+                <option value="">USER</option>
+                <option value="">ADMIN</option>
+                <option value="">WORKER</option>
+             </select>
+             <hr>
+             <!-- datalist -->
+             <input type="text" list="cities">
+             <datalist id="cities">
+
+                <option value="banglore"></option>
+                <option value="pune"></option>
+                <option value="hydrabad"></option>
+                <option value="mumbai"></option>
+             </datalist>
+             <hr>
+             <!-- textarea -->
+             <textarea name="" id="" cols="30" rows="10" placeholder="enter your feedback.........."></textarea>
+             <hr>
+             <input type="submit" value="login">
+             <input type="reset" value="cancel">
+             <button type="submit">login</button>
+             <button type="reset">cancel</button>
+            </fieldset>
+
+        </form>
+</body>
+</html>
+
+<!-- form action defined here -->
