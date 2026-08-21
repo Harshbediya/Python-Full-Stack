@@ -3,22 +3,101 @@
 <head>
     <meta charset="UTF-8">
     <meta name="viewport" content="width=device-width, initial-scale=1.0">
-    <title>Document</title>
-     <style>
-    body {
-      background-color: #f0f0f0;
-    }
-    p {
-      background-color: yellow;
-    }
-  </style>
+    <title>CSS Background Properties</title>
+    <style>
+      body {
+        margin: 0;
+        padding: 24px;
+        background-color: #f0f0f0;
+        font-family: Arial, sans-serif;
+      }
+
+      h1 {
+        color: #17324d;
+      }
+
+      .example {
+        min-height: 120px;
+        margin: 16px 0;
+        padding: 20px;
+        border: 2px solid #17324d;
+        color: #17324d;
+      }
+
+      .color {
+        background-color: #ffd166;
+      }
+
+      .image {
+            background-image: url('../ASSEST/imag.png');
+        background-repeat: no-repeat;
+        background-position: center;
+        background-size: cover;
+        background-color: #8ecae6;
+      }
+
+      .repeat {
+        background-image: linear-gradient(45deg, #90be6d 25%, transparent 25%);
+        background-size: 40px 40px;
+        background-repeat: repeat;
+      }
+
+      .fixed {
+        background-attachment: fixed;
+        background-image: linear-gradient(#caf0f8, #90e0ef);
+      }
+
+      .origin-clip {
+        background-color: #f4a261;
+        background-clip: padding-box;
+        background-origin: border-box;
+      }
+
+      .blend {
+        background-color: #264653;
+        background-image: linear-gradient(90deg, #e76f51, #2a9d8f);
+        background-blend-mode: multiply;
+        color: white;
+      }
+
+      .shorthand {
+            background: #e9c46a url('../ASSEST/imag.png') no-repeat center / cover;
+      }
+    </style>
 </head>
 <body>
-    <p>Lorem ipsum dolor, sit amet consectetur adipisicing elit. Ratione eveniet, eius natus recusandae mollitia, sunt incidunt aperiam cupiditate delectus, ullam aspernatur reprehenderit! Autem qui alias nisi ut architecto, neque non!
-    Natus magni odio inventore aperiam veniam itaque magnam nobis repellat ducimus rerum. Nesciunt eius fugit suscipit necessitatibus unde repellat enim eos est architecto incidunt. Illum odio enim itaque officia incidunt.
-    Consequuntur ullam adipisci facilis laboriosam. Fuga blanditiis amet rerum itaque modi, perspiciatis maxime placeat rem velit provident dolorum. Voluptas aspernatur officiis est? Quasi vero architecto fugit in nobis tempora animi.
-    Magni nisi, nulla, enim sint dolores deserunt recusandae repellat placeat, eum ad officiis. Optio nihil repellat ullam eos esse! Commodi molestiae repellendus magnam id dolor ratione nemo modi quod nam!
-    Vel, assumenda id quae neque quam perspiciatis iste velit officiis alias deleniti distinctio magnam? Voluptatum odio laudantium optio eius, numquam, explicabo iste vel earum odit ipsum pariatur suscipit excepturi nesciunt!</p>
-    
+    <h1>Important CSS Background Properties</h1>
+
+    <div class="example color">
+      <strong>background-color:</strong> Sets the background color of an element.
+    </div>
+
+    <div class="example image">
+      <strong>background-image, background-repeat, background-position, background-size:</strong>
+      Adds, places, and scales a background image.
+    </div>
+
+    <div class="example repeat">
+      <strong>background-repeat:</strong> Controls whether a background image repeats.
+      Common values are <code>repeat</code>, <code>no-repeat</code>, <code>repeat-x</code>, and <code>repeat-y</code>.
+    </div>
+
+    <div class="example fixed">
+      <strong>background-attachment:</strong> Controls whether the background scrolls with the page.
+      Common values are <code>scroll</code>, <code>fixed</code>, and <code>local</code>.
+    </div>
+
+    <div class="example origin-clip">
+      <strong>background-origin and background-clip:</strong> Control where the background starts and
+      how far it is painted: <code>border-box</code>, <code>padding-box</code>, or <code>content-box</code>.
+    </div>
+
+    <div class="example blend">
+      <strong>background-blend-mode:</strong> Defines how background layers blend together.
+    </div>
+
+    <div class="example shorthand">
+      <strong>background:</strong> Shorthand for setting several background properties in one declaration.
+    </div>
 </body>
 </html>
