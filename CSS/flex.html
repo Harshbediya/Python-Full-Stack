@@ -3,31 +3,38 @@
 <head>
     <meta charset="UTF-8">
     <meta name="viewport" content="width=device-width, initial-scale=1.0">
-    <title>Document</title>
+    <title>Flexbox Important Points</title>
     <style>
+        /* The element with class "main" becomes a flex container. */
         .main{
             height: 70vh;
             width: 100%;
             border: 2px solid black;
             display: flex;
          
+            /* The last valid repeated declaration is the one the browser applies. */
             justify-content: center;
             justify-content: space-around;
             justify-content: flex-end;
             justify-content: space-between;
             justify-content: space-evenly;
             
+            /* align-items controls alignment on the cross axis. */
             align-items: center; 
             align-items: flex-end;
-            align-items: space-around; 
-            align-items: space-between;
+
+            /* space-around and space-between are not valid align-items values. */
+            /* row-reverse places the flex items from right to left. */
             flex-direction: row-reverse;
         }
+        /* Flex properties affect children only when this element is a flex container. */
         .wrap{
             height: 200px;
             width: 200px;
             border: 2px solid brown;
             font-size: 4rem;
+            /* Make each box a flex container so its number can be centered. */
+            display: flex;
             justify-content: center;
             align-items: center;
         }
@@ -40,5 +47,31 @@
         <div class="wrap">3</div>
         <div class="wrap">4</div>
     </div>
+
+    <!--
+        IMPORTANT FLEXBOX POINTS
+
+        How to use: Add display: flex; to a parent element.
+        Why: This activates Flexbox and allows the parent to arrange its children.
+
+        How to use: Use flex-direction to choose row, row-reverse, column, or column-reverse.
+        Why: It sets the direction of the main axis.
+
+        How to use: Use justify-content with values such as center, space-between,
+        or space-evenly.
+        Why: It aligns or distributes items along the main axis.
+
+        How to use: Use align-items with values such as center or flex-end.
+        Why: It aligns items along the cross axis.
+
+        How to use: Use flex-wrap: wrap; when items should move to another line.
+        Why: It prevents items from overflowing in small spaces.
+
+        How to use: Use gap to add space between flex items.
+        Why: It creates consistent spacing without adding margins to each child.
+
+        Important: If a CSS property is repeated, the last valid declaration is applied.
+        Note: space-around and space-between are not valid values for align-items.
+    -->
 </body>
 </html>
