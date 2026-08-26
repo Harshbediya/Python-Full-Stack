@@ -6,39 +6,53 @@
     <title>Document</title>
     <style>
 
-      
+       /* ID selector: targets the element whose id is "head1". */
        #head1{
+        /* Sets the element's background color to black. */
         background-color: black;
+        /* rem scales the text size relative to the root HTML font size. */
         font-size: 3rem;
+        /* Sets the text color to orange. */
         color: orange;
        }
 
-        /** Class Selectors */
+        /* Class selector: targets every element with class="header". */
         .header{
+            /* Makes the paragraph text larger. */
             font-size: 2rem;
+            /* Changes the paragraph text color. */
             color: olivedrab;
         }
+
+        /* Group selector: applies the same rules to h1, h2, and h3 elements. */
         h1,h2,h3{
             font-size: 2rem;
             color: lawngreen;
         }
 
+        /* Universal selector: targets every element on the page. */
         *{
+            /* Gives all elements an antiquewhite background. */
             background-color: antiquewhite ;
         }
        
 
     </style>
 </head>
+<!-- The body contains all content visible in the browser window. -->
 <body align="center">
 
+    <!-- h1 is the main heading; id connects it to the #head1 CSS selector. -->
     <h1 id="head1">Hello CSS</h1>
+    <!-- hr creates a horizontal thematic break. -->
     <hr>
+    <!-- h2 is a secondary heading. The repeated id is kept as in the original example. -->
     <h2 id="head1">Welcome too..!!</h2>
+    <!-- p represents a paragraph; class connects it to the .header CSS selector. -->
     <p class="header">Lorem ipsum dolor sit amet, consectetur adipisicing elit. Voluptatum sit deleniti vitae atque animi pariatur? Reprehenderit soluta exercitationem, obcaecati reiciendis minima asperiores debitis. Numquam voluptate, facilis iure veniam molestias officiis?
     Atque, ipsa, ipsum ipsam perspiciatis minima at ullam dicta aut id quae voluptate possimus accusantium distinctio quasi iste error excepturi repellat doloremque ab corporis reprehenderit veniam nisi repellendus natus. Eaque.</p>
 
-    
+    <!-- These headings demonstrate the grouped h1, h2, h3 selector. -->
     <h1>Hello1</h1>
     <h2>Hello2</h2>
     <h3>Hello3</h3>
