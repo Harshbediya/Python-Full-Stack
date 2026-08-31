@@ -1,0 +1,105 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Flexbox Basics</title>
+    <style>
+        * {
+            box-sizing: border-box;
+        }
+
+        body {
+            margin: 0;
+            font-family: Arial, sans-serif;
+            background: #f4f4f4;
+        }
+
+        .main {
+            padding: 40px 20px;
+        }
+
+        h2 {
+            text-align: center;
+            color: #333;
+        }
+
+        /*
+            Flexbox basic setup:
+            display: flex; -> makes the container a flex container.
+            flex-direction: row; -> items arrange horizontally (default).
+            flex-direction: column; -> items arrange vertically.
+            justify-content: center; -> aligns items along the main axis.
+            align-items: center; -> aligns items along the cross axis.
+            gap: 20px; -> adds space between items.
+            flex-wrap: wrap; -> allows items to move to next line if space is limited.
+        */
+        .container {
+            width: 90%;
+            max-width: 1000px;
+            margin: 30px auto;
+            background: #fff;
+            border: 2px solid #ddd;
+            padding: 20px;
+
+            display: flex;          /* Make this element a flex container */
+            flex-direction: row;    /* Row direction: left to right */
+            justify-content: space-around; /* Spread items with equal space */
+            align-items: center;   /* Align items vertically in the center */
+            gap: 20px;             /* Space between boxes */
+            flex-wrap: wrap;       /* Allow items to wrap to next line */
+        }
+
+        .box {
+            width: 180px;
+            height: 120px;
+            background: linear-gradient(135deg, #4facfe, #00f2fe);
+            color: white;
+            font-size: 20px;
+            font-weight: bold;
+            border-radius: 12px;
+            display: flex;
+            justify-content: center;  /* Center text horizontally */
+            align-items: center;    /* Center text vertically */
+            box-shadow: 0 6px 12px rgba(0, 0, 0, 0.15);
+        }
+
+        /*
+            Flex item properties:
+            flex: 1; -> item grows to fill available space.
+            flex: 2; -> item grows twice as much as others.
+            order: ... -> changes item order.
+            align-self: ... -> custom alignment for one item.
+        */
+        .box1 {
+            flex: 1; /* Takes available space */
+        }
+
+        .box2 {
+            flex: 2; /* Grows more than box1 */
+        }
+
+        .box3 {
+            flex: 1;
+            order: 2; /* Changes order of this item */
+        }
+
+        .box4 {
+            flex: 1;
+            align-self: flex-end; /* Moves only this item lower */
+        }
+    </style>
+</head>
+<body>
+    <div class="main">
+        <h2>Flexbox Basics</h2>
+
+        <div class="container">
+            <div class="box box1">1</div>
+            <div class="box box2">2</div>
+            <div class="box box3">3</div>
+            <div class="box box4">4</div>
+        </div>
+    </div>
+</body>
+</html>
