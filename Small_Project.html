@@ -1,0 +1,439 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Web Tech Practice Project</title>
+    <style>
+        /*
+            IMPORTANT CSS POINTS:
+            1. CSS selectors are used to target HTML elements.
+            2. We can style elements using classes, IDs, tags, and pseudo-selectors.
+            3. Box model: margin, border, padding, content.
+            4. display: flex; makes a container a flexbox.
+            5. justify-content works on the main axis.
+            6. align-items works on the cross axis.
+            7. gap adds space between flex items.
+            8. Responsive design is improved by using width: 100%, max-width, and media queries.
+        */
+
+        :root {
+            --primary: #2563eb;
+            --secondary: #0f172a;
+            --light: #f8fafc;
+            --text: #1f2937;
+            --border: #dbe4f0;
+            --success: #16a34a;
+            --warning: #f59e0b;
+        }
+
+        * {
+            box-sizing: border-box;
+        }
+
+        body {
+            margin: 0;
+            font-family: Arial, sans-serif;
+            background: linear-gradient(to bottom, #eef6ff, #ffffff);
+            color: var(--text);
+            line-height: 1.6;
+        }
+
+        a {
+            text-decoration: none;
+        }
+
+        img {
+            max-width: 100%;
+            display: block;
+        }
+
+        .container {
+            width: 90%;
+            max-width: 1200px;
+            margin: 0 auto;
+        }
+
+        /*
+            Header styling:
+            - background color adds visual look
+            - padding adds space inside the element
+            - border-bottom creates a clean line under the nav
+        */
+        .header {
+            background: var(--secondary);
+            color: white;
+            padding: 18px 0;
+            border-bottom: 3px solid var(--primary);
+        }
+
+        .navbar {
+            display: flex;
+            justify-content: space-between;
+            align-items: center;
+            gap: 20px;
+            flex-wrap: wrap;
+        }
+
+        .logo {
+            font-size: 1.7rem;
+            font-weight: bold;
+            color: #fff;
+        }
+
+        .nav-links {
+            display: flex;
+            gap: 25px;
+            flex-wrap: wrap;
+        }
+
+        .nav-links a {
+            color: white;
+            font-weight: 600;
+        }
+
+        /*
+            Hero section uses Flexbox for layout.
+            display: flex makes the left text and right image align horizontally.
+            justify-content: space-between distributes elements nicely.
+        */
+        .hero {
+            display: flex;
+            justify-content: space-between;
+            align-items: center;
+            gap: 40px;
+            padding: 60px 0;
+            flex-wrap: wrap;
+        }
+
+        .hero-text {
+            flex: 1 1 500px;
+        }
+
+        .hero-text h1 {
+            font-size: 3rem;
+            margin: 0 0 15px;
+            color: var(--secondary);
+        }
+
+        .hero-text p {
+            font-size: 1.1rem;
+            margin-bottom: 20px;
+        }
+
+        .btn {
+            background: var(--primary);
+            color: white;
+            border: none;
+            padding: 12px 24px;
+            border-radius: 8px;
+            font-size: 1rem;
+            cursor: pointer;
+        }
+
+        .hero-image {
+            flex: 1 1 400px;
+        }
+
+        .hero-image img {
+            width: 100%;
+            border-radius: 20px;
+            box-shadow: 0 10px 20px rgba(0, 0, 0, 0.15);
+        }
+
+        /*
+            Card section:
+            display: flex with gap creates equal spacing.
+            flex-wrap: wrap allows cards to move to the next line on smaller screens.
+        */
+        .cards {
+            display: flex;
+            gap: 25px;
+            flex-wrap: wrap;
+            padding: 20px 0 40px;
+        }
+
+        .card {
+            flex: 1 1 220px;
+            background: white;
+            padding: 25px 20px;
+            border: 1px solid var(--border);
+            border-radius: 12px;
+            box-shadow: 0 4px 10px rgba(0, 0, 0, 0.05);
+        }
+
+        .card h3 {
+            color: var(--primary);
+            margin-top: 0;
+        }
+
+        .card p {
+            margin-bottom: 0;
+        }
+
+        /*
+            list-style-type changes bullet styles.
+            margin and padding adjust spacing inside the list.
+        */
+        .section {
+            padding: 30px 0;
+        }
+
+        .two-column {
+            display: flex;
+            gap: 30px;
+            flex-wrap: wrap;
+        }
+
+        .left,
+        .right {
+            flex: 1 1 450px;
+        }
+
+        .features-list {
+            list-style: square;
+            padding-left: 25px;
+            font-size: 1.05rem;
+        }
+
+        .features-list li {
+            margin: 10px 0;
+        }
+
+        /*
+            Table styling:
+            border collapses table borders for cleaner look.
+            th and td set table cell spacing.
+        */
+        table {
+            width: 100%;
+            border-collapse: collapse;
+            background: white;
+            border: 1px solid var(--border);
+        }
+
+        th, td {
+            border: 1px solid var(--border);
+            padding: 12px 16px;
+            text-align: left;
+        }
+
+        th {
+            background: #dbeafe;
+            color: var(--secondary);
+        }
+
+        /*
+            Form elements are used to collect user input.
+            input, textarea, select are important HTML form controls.
+        */
+        .form-box {
+            background: white;
+            padding: 25px;
+            border: 1px solid var(--border);
+            border-radius: 12px;
+            box-shadow: 0 4px 10px rgba(0, 0, 0, 0.05);
+        }
+
+        .form-group {
+            margin-bottom: 18px;
+        }
+
+        label {
+            display: block;
+            margin-bottom: 8px;
+            font-weight: bold;
+        }
+
+        input, textarea, select {
+            width: 100%;
+            padding: 12px 14px;
+            border: 1px solid #cbd5e1;
+            border-radius: 8px;
+            font-size: 1rem;
+        }
+
+        textarea {
+            resize: vertical;
+            min-height: 120px;
+        }
+
+        .submit-btn {
+            background: var(--success);
+            color: white;
+            border: none;
+            padding: 12px 20px;
+            border-radius: 8px;
+            font-size: 1rem;
+            cursor: pointer;
+        }
+
+        .footer {
+            background: var(--secondary);
+            color: white;
+            text-align: center;
+            padding: 20px 0;
+            margin-top: 30px;
+        }
+
+        @media (max-width: 768px) {
+            .hero-text h1 {
+                font-size: 2.2rem;
+            }
+
+            .nav-links {
+                justify-content: center;
+            }
+        }
+    </style>
+</head>
+<body>
+    <header class="header">
+        <div class="container navbar">
+            <div class="logo">Web Tech</div>
+            <nav class="nav-links" aria-label="main navigation">
+                <a href="#home">Home</a>
+                <a href="#features">Features</a>
+                <a href="#table">Table</a>
+                <a href="#contact">Contact</a>
+            </nav>
+        </div>
+    </header>
+
+    <main class="container">
+        <section class="hero" id="home">
+            <div class="hero-text">
+                <h1>Learn HTML & CSS</h1>
+                <p>
+                    This page shows how to use important HTML tags, CSS styling,
+                    selectors, and Flexbox to create modern web layouts.
+                </p>
+                <button class="btn">Get Started</button>
+            </div>
+
+            <div class="hero-image">
+                <img src="https://images.unsplash.com/photo-1522202176988-66273c2fd55f?auto=format&fit=crop&w=900&q=80" alt="students working together">
+            </div>
+        </section>
+
+        <section class="cards" id="features">
+            <div class="card">
+                <h3>HTML Basics</h3>
+                <p>Use headings, paragraphs, lists, tables, and forms to organize content.</p>
+            </div>
+            <div class="card">
+                <h3>CSS Styling</h3>
+                <p>Use colors, borders, backgrounds, margins, and paddings to design pages.</p>
+            </div>
+            <div class="card">
+                <h3>Flexbox</h3>
+                <p>Arrange elements easily with justify-content, align-items, and flex-wrap.</p>
+            </div>
+        </section>
+
+        <section class="section two-column">
+            <div class="left">
+                <h2>Important Web Concepts</h2>
+                <ul class="features-list">
+                    <li><strong>Tags</strong> are used to structure content.</li>
+                    <li><strong>Classes</strong> help style many elements together.</li>
+                    <li><strong>Flexbox</strong> makes layouts easy and responsive.</li>
+                    <li><strong>Forms</strong> collect user input for websites.</li>
+                    <li><strong>Tables</strong> are used to display data clearly.</li>
+                </ul>
+            </div>
+
+            <div class="right">
+                <h2>Quick Notes</h2>
+                <p>
+                    <!-- This is a comment inside HTML. Comments are useful for notes and explanations. -->
+                    In HTML, comments are used to write developer notes that are not displayed on the page.
+                    In CSS, comments are used to explain blocks of code and important rules.
+                </p>
+                <p>
+                    Use <strong>semantic tags</strong> such as header, nav, main, section, and footer
+                    to make code cleaner and more meaningful.
+                </p>
+            </div>
+        </section>
+
+        <section class="section" id="table">
+            <h2>Student Progress Table</h2>
+            <table>
+                <tr>
+                    <th>Name</th>
+                    <th>Subject</th>
+                    <th>Marks</th>
+                    <th>Status</th>
+                </tr>
+                <tr>
+                    <td>Ali</td>
+                    <td>HTML</td>
+                    <td>88</td>
+                    <td>Pass</td>
+                </tr>
+                <tr>
+                    <td>Sara</td>
+                    <td>CSS</td>
+                    <td>92</td>
+                    <td>Pass</td>
+                </tr>
+                <tr>
+                    <td>Hassan</td>
+                    <td>Flexbox</td>
+                    <td>85</td>
+                    <td>Pass</td>
+                </tr>
+            </table>
+        </section>
+
+        <section class="section" id="contact">
+            <h2>Contact Form</h2>
+            <div class="form-box">
+                <form>
+                    <div class="form-group">
+                        <label for="name">Full Name</label>
+                        <input type="text" id="name" name="name" placeholder="Enter your name">
+                    </div>
+
+                    <div class="form-group">
+                        <label for="email">Email</label>
+                        <input type="email" id="email" name="email" placeholder="Enter your email">
+                    </div>
+
+                    <div class="form-group">
+                        <label for="course">Course</label>
+                        <select id="course" name="course">
+                            <option value="html">HTML</option>
+                            <option value="css">CSS</option>
+                            <option value="flexbox">Flexbox</option>
+                            <option value="webdesign">Web Design</option>
+                        </select>
+                    </div>
+
+                    <div class="form-group">
+                        <label for="message">Message</label>
+                        <textarea id="message" name="message" placeholder="Write your message here..."></textarea>
+                    </div>
+
+                    <button type="submit" class="submit-btn">Submit</button>
+                </form>
+            </div>
+        </section>
+    </main>
+
+    <footer class="footer">
+        <p>© 2026 Web Tech Practice Project | Built using HTML + CSS + Flexbox</p>
+    </footer>
+</body>
+</html>
+
+<!--
+    IMPORTANT NOTES:
+    - HTML creates the structure of a page.
+    - CSS adds design and layout.
+    - Use classes to reuse styles.
+    - Flexbox is very useful for aligning items.
+    - Comments help explain code for learning.
+    - A beginner project should include headings, text, lists, forms, tables, and images.
+-->
