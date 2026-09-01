@@ -83,6 +83,12 @@
             transform: rotateZ(45deg);
         }
 
+        /* This selector means:
+           inside .rotate container,
+           select the 4th direct child having class .items,
+           and when mouse hover on it apply transform. 
+        */
+        
         /* rotate the 4th item in all 3 directions */
         .rotate > .items:nth-child(4):hover {
             transform: rotateX(180deg) rotateY(180deg) rotateZ(180deg);
@@ -102,22 +108,22 @@
         .scale > .items:nth-child(3):hover {
             transform: scale(0.6);
         }
-
-        /* This selector means:
-           inside .rotate container,
-           select the 4th direct child having class .items,
-           and when mouse hover on it apply transform. */
-        .rotate > .items:nth-child(4):hover {
-            transform: rotateX(180deg) rotateY(180deg) rotateZ(180deg);
-        }
-
-        /* This selector means:
+           /* This selector means:
            inside .scale container,
            select the 3rd direct child having class .items,
-           and when hovered make it smaller. */
-        .
-         > .items:nth-child(3):hover {
-            transform: scale(0.6);
+           and when hovered make it smaller. 
+        */
+        
+                /* skew  */
+        
+        .skew>.items:nth-child(1):hover {
+            transform:skewX(20deg) ;
+        }
+         .skew>.items:nth-child(2):hover {
+            transform:skewY(20deg) ;
+        }
+         .skew>.items:nth-child(3):hover {
+            transform:skew(20deg ,15deg) ;
         }
     </style>
 </head>
@@ -141,6 +147,14 @@
 
         <!-- submain scale: another flexbox for scale examples -->
         <div class="submain scale">
+            <div class="items"></div>
+            <div class="items"></div>
+            <div class="items"></div>
+        </div>
+
+        <p>SKEW</p>
+
+            <div class="submain skew">
             <div class="items"></div>
             <div class="items"></div>
             <div class="items"></div>
@@ -172,6 +186,10 @@ Q7. Why is flexbox used here?
 Flexbox is used to arrange the boxes neatly in rows and columns. It helps in alignment and spacing, making the layout responsive and attractive.
 
 Q8. Why is transition important?
-transition adds smooth animation. Without it, the transformation would happen instantly. With transition, the rotation and scale effects look smoother and more professional.
+transition adds smooth animation. Without it, the transformation would happen instantly. With transition, the rotation and scale effects look smoother and more professional.-->
 
--->
+
+
+  
+
+     
