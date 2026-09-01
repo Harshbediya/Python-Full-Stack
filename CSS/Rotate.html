@@ -1,0 +1,177 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Document</title>
+    <style>
+        /* body tag: page background and default styling */
+        body {
+            margin: 0;
+            font-family: Arial, sans-serif;
+            background: #f4f4f4;
+        }
+
+        /* .main is the main parent container */
+        .main {
+            padding: 40px 20px;
+        }
+
+        /* p tag is used for heading/text center */
+        p {
+            text-align: center;
+            color: #333;
+            font-size: 24px;
+            font-weight: bold;
+        }
+
+        /* .submain is a flex container. It arranges child boxes in rows */
+        .submain {
+            width: 90%;
+            max-width: 1000px;
+            margin: 30px auto;
+            background: #fff;
+            border: 2px solid black;
+            padding: 20px;
+            display: flex; /* Makes the container a flexbox */
+            flex-direction: row; /* Items are placed in a row */
+            justify-content: space-around; /* Space between items */
+            align-items: center; /* Vertical alignment */
+            gap: 20px; /* Space between child boxes */
+            flex-wrap: wrap; /* Move to next line if there is no space */
+            overflow: hidden; /* Prevent overflow outside box */
+        }
+
+        /* .box is a general box style, used to create a card-like area */
+        .box {
+            width: 600px;
+            height: 400px;
+            background: linear-gradient(135deg, #4facfe, #00f2fe);
+            color: white;
+            border-radius: 12px;
+            display: flex;
+            justify-content: center;
+            align-items: center;
+            transition: transform 0.6s ease; /* Smooth animation on hover */
+        }
+
+        /* .items is each small box inside the flex layout */
+        .items {
+            height: 200px;
+            width: 200px;
+            border: 2px solid black;
+            flex: 1 1 220px;
+            max-width: 250px;
+            background: linear-gradient(135deg, #4facfe, #00f2fe);
+            border-radius: 12px;
+            transition: transform 0.6s ease; /* Adds smooth movement animation */
+            box-sizing: border-box; /* Keeps border inside width and height */
+        }
+
+        /* rotate the 1st item around x-axis when mouse hover */
+        .rotate > .items:nth-child(1):hover {
+            transform: rotateX(180deg);
+        }
+
+        /* rotate the 2nd item around y-axis when mouse hover */
+        .rotate > .items:nth-child(2):hover {
+            transform: rotateY(180deg);
+        }
+
+        /* rotate the 3rd item around z-axis when mouse hover */
+        .rotate > .items:nth-child(3):hover {
+            transform: rotateZ(45deg);
+        }
+
+        /* rotate the 4th item in all 3 directions */
+        .rotate > .items:nth-child(4):hover {
+            transform: rotateX(180deg) rotateY(180deg) rotateZ(180deg);
+        }
+
+        /* scale the 1st item bigger on hover */
+        .scale > .items:nth-child(1):hover {
+            transform: scale(1.4);
+        }
+
+        /* scale the 2nd item bigger on hover */
+        .scale > .items:nth-child(2):hover {
+            transform: scale(1.4);
+        }
+
+        /* scale the 3rd item smaller on hover */
+        .scale > .items:nth-child(3):hover {
+            transform: scale(0.6);
+        }
+
+        /* This selector means:
+           inside .rotate container,
+           select the 4th direct child having class .items,
+           and when mouse hover on it apply transform. */
+        .rotate > .items:nth-child(4):hover {
+            transform: rotateX(180deg) rotateY(180deg) rotateZ(180deg);
+        }
+
+        /* This selector means:
+           inside .scale container,
+           select the 3rd direct child having class .items,
+           and when hovered make it smaller. */
+        .
+         > .items:nth-child(3):hover {
+            transform: scale(0.6);
+        }
+    </style>
+</head>
+<body>
+    <!-- This is the main wrapper of the page -->
+    <div class="main">
+        <!-- p tag is used for paragraph/heading text -->
+        <p>ROTATE</p>
+
+        <!-- submain rotate: flexbox container for rotate examples -->
+        <div class="submain rotate">
+            <!-- Each div is a box item -->
+            <div class="items"></div>
+            <div class="items"></div>
+            <div class="items"></div>
+            <div class="items"></div>
+        </div>
+
+        <!-- Another heading for scale effect -->
+        <p>SCALE</p>
+
+        <!-- submain scale: another flexbox for scale examples -->
+        <div class="submain scale">
+            <div class="items"></div>
+            <div class="items"></div>
+            <div class="items"></div>
+        </div>
+    </div>
+</body>
+</html>
+
+<!--  
+
+Q3. What is the purpose of CSS in this code?
+CSS is used to style the boxes and apply animations. It controls layout, spacing, colors, border, and hover effects. It makes the webpage visually interactive.
+
+Q4. What is :hover in CSS?
+:hover is a pseudo-class that applies styles when the mouse pointer is over an element. In this project, it triggers the rotation and scaling effects when the user hovers over the boxes.
+
+Q5. What is transform?
+transform is used to rotate, scale, skew, or move an element. In this code, it is used for:
+
+rotateX() → rotate along X axis
+rotateY() → rotate along Y axis
+rotateZ() → rotate along Z axis
+scale() → enlarge or shrink the element
+
+Q6. What is nth-child()?
+nth-child() is used to select a specific child element among the parent’s children. In this file, it targets individual boxes like the first, second, third, or fourth box and applies different effects to each one.
+
+Q7. Why is flexbox used here?
+Flexbox is used to arrange the boxes neatly in rows and columns. It helps in alignment and spacing, making the layout responsive and attractive.
+
+Q8. Why is transition important?
+transition adds smooth animation. Without it, the transformation would happen instantly. With transition, the rotation and scale effects look smoother and more professional.
+
+-->

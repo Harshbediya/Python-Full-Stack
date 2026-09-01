@@ -1,0 +1,67 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Document</title>
+    <style>
+        .box{
+            width: 500px;
+            height: 500px;
+            border: 3px solid black;
+            background-color: bisque;
+            transition-property: all;
+            transition-duration: 1000ms;
+            transition-timing-function: ease-in-out;
+            transition: all 1000ms ease-in-out;
+        }
+        .box:hover{
+            width: 100%;
+            background-color: maroon;
+        }
+    </style>
+</head>
+<body>
+    <div class="box"></div>
+</body>
+</html>
+
+<!--
+    Explanation:
+
+    1. <!DOCTYPE html> -> tells the browser this is HTML5.
+    2. <html> -> root element of the webpage.
+    3. <head> -> contains metadata and styling.
+    4. <meta charset="UTF-8"> -> supports different characters.
+    5. <meta name="viewport"> -> helps the page work on mobile devices.
+    6. <title> -> browser tab title.
+    7. <style> -> used to write CSS inside HTML.
+    8. .box -> class used to style the box.
+    9. width, height, border, background-color -> design properties.
+    10. transition -> makes the change smooth and animated.
+    11. .box:hover -> applies styles when the mouse is over the box.
+    12. width: 100% -> box stretches to full width on hover.
+    13. background-color: maroon -> box color changes on hover.
+    14. <div class="box"></div> -> creates the animated box.
+
+Interview-style answer
+Q: What is this project?
+This project demonstrates CSS transition effect. A box changes its width and color smoothly when the mouse hovers over it.
+
+Q: What is transition in CSS?
+Transition is used to create smooth animation when CSS properties change. It allows the change to happen gradually instead of suddenly.
+
+Q: Why is transition used?
+It makes the design more attractive and user-friendly. Without transition, the effect would happen instantly.
+
+Q: What is the use of :hover?
+:hover applies CSS when the mouse pointer is over an element. Here, it changes the box size and background color.
+
+Q: What is a div tag?
+div is a container tag used to group elements. In this project, it is used to create the animated box.
+
+Q: Why do we use CSS in HTML?
+CSS is used to design and style the webpage. It controls layout, colors, borders, and animations.
+
+
+-->
