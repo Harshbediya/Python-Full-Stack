@@ -1,0 +1,1100 @@
+/* ============================================================
+   CSS REVISION PROJECT - COMPREHENSIVE STYLESHEET
+   ============================================================
+   
+   This CSS file explains ALL concepts you've learned:
+   ✓ Selectors (Element, Class, ID, Attribute, Pseudo-class)
+   ✓ Background Properties (Color, Gradient, Opacity)
+   ✓ Display Property (block, inline, flex, inline-block)
+   ✓ Flexbox Properties (justify-content, align-items, direction)
+   ✓ Hover Effects (Transform, Color, Shadow)
+   ✓ Transitions (Duration, Timing, Delay)
+   ✓ Transformations (Rotate, Scale, Translate, Skew)
+   
+   ============================================================ */
+
+/* ============================================================
+   RESET STYLES - Clean slate for styling
+   Question: Why reset margin and padding?
+   Answer: Different browsers have different defaults. Reset gives consistent base.
+   ============================================================ */
+* {
+    margin: 0;
+    padding: 0;
+    box-sizing: border-box;
+    /* 
+    Question: What does box-sizing: border-box do?
+    Answer: Includes padding and border in width calculation (easier to work with)
+    */
+}
+
+/* ============================================================
+   BODY & GENERAL STYLES
+   ============================================================ */
+body {
+    font-family: 'Segoe UI', Tahoma, Geneva, Verdana, sans-serif;
+    line-height: 1.6;
+    color: #333;
+    /* 
+    Question: What is line-height?
+    Answer: Space between lines. 1.6 = 1.6x font size. Makes text readable.
+    */
+    
+    /* BACKGROUND GRADIENT - One of concepts you learned */
+    background: linear-gradient(135deg, #667eea 0%, #764ba2 100%);
+    /* 
+    Explanation:
+    - linear-gradient(angle, color1, color2, ...)
+    - 135deg = diagonal from top-left to bottom-right
+    - 0% = starting point color
+    - 100% = ending point color
+    */
+    
+    min-height: 100vh;
+    /* Takes full viewport height */
+    padding: 20px;
+}
+
+/* ============================================================
+   HEADER SECTION
+   Question: Why use semantic tags like <header>?
+   Answer: Better for accessibility and SEO
+   ============================================================ */
+.header {
+    /* 
+    DISPLAY: FLEX - Creates flexible layout
+    Question: When should you use flex?
+    Answer: When you need to align/center items or create responsive layouts
+    */
+    display: flex;
+    flex-direction: column;
+    /* Changes flex direction from row (default) to column */
+    
+    justify-content: center;
+    /* Centers items on main axis (vertically in column mode) */
+    
+    align-items: center;
+    /* Centers items on cross axis (horizontally in column mode) */
+    
+    background: rgba(255, 255, 255, 0.95);
+    /* 
+    BACKGROUND WITH OPACITY (RGBA)
+    Question: What does rgba(255, 255, 255, 0.95) mean?
+    Answer: White (255,255,255) with 0.95 opacity (95% visible, 5% transparent)
+    */
+    
+    padding: 30px;
+    text-align: center;
+    border-radius: 15px;
+    /* Rounded corners */
+    
+    box-shadow: 0 10px 30px rgba(0, 0, 0, 0.2);
+    /* 
+    BOX-SHADOW: 0 10px 30px rgba(0, 0, 0, 0.2)
+    Explanation:
+    - 0 = horizontal offset (0 = centered)
+    - 10px = vertical offset (shadow below)
+    - 30px = blur radius (softer shadow)
+    - rgba(0,0,0,0.2) = black at 20% opacity
+    */
+    
+    margin-bottom: 40px;
+    
+    /* TRANSITION - Smooth animation */
+    transition: all 0.3s ease;
+    /* Will animate ANY changes smoothly over 0.3 seconds */
+}
+
+.header:hover {
+    /* HOVER EFFECT - What happens when mouse hovers */
+    box-shadow: 0 15px 40px rgba(0, 0, 0, 0.3);
+    transform: translateY(-5px);
+    /* Moves up 5 pixels */
+}
+
+.header h1 {
+    font-size: 2.5rem;
+    color: #667eea;
+    margin-bottom: 10px;
+}
+
+.subtitle {
+    font-size: 1.1rem;
+    color: #666;
+}
+
+/* ============================================================
+   CONTAINER - Main content wrapper
+   ============================================================ */
+.container {
+    max-width: 1200px;
+    /* Limits width on large screens */
+    
+    margin: 0 auto;
+    /* Centers container (0 top/bottom, auto left/right) */
+    
+    background: rgba(255, 255, 255, 0.98);
+    padding: 40px;
+    border-radius: 15px;
+    box-shadow: 0 20px 60px rgba(0, 0, 0, 0.3);
+}
+
+/* ============================================================
+   SECTION STYLING
+   ============================================================ */
+.section {
+    margin-bottom: 50px;
+    padding-bottom: 30px;
+    border-bottom: 2px solid #eee;
+}
+
+.section:last-child {
+    border-bottom: none;
+}
+
+.section-title {
+    font-size: 1.8rem;
+    color: #667eea;
+    margin-bottom: 25px;
+    padding-bottom: 10px;
+    border-left: 5px solid #667eea;
+    padding-left: 15px;
+}
+
+/* ============================================================
+   CONCEPT GROUP STYLING
+   ============================================================ */
+.concept-group {
+    margin-bottom: 30px;
+    padding: 20px;
+    background: #f9f9f9;
+    border-radius: 10px;
+    border-left: 4px solid #667eea;
+}
+
+.concept-group h3 {
+    color: #333;
+    margin-bottom: 15px;
+    font-size: 1.2rem;
+}
+
+.explanation {
+    background: white;
+    padding: 15px;
+    border-radius: 8px;
+    margin-top: 15px;
+    font-size: 0.95rem;
+    color: #555;
+    border-left: 3px solid #FF6B6B;
+}
+
+/* ============================================================
+   SECTION 1: BACKGROUND EXAMPLES
+   ============================================================ */
+
+/* BACKGROUND COLOR EXAMPLE */
+.bg-color-example {
+    background-color: #FF6B6B;
+    /* 
+    Question: What's a HEX color?
+    Answer: #RRGGBB format. RR=red, GG=green, BB=blue (00-FF each)
+    #FF6B6B = lots of red, medium green, medium blue
+    */
+    
+    color: white;
+}
+
+/* BACKGROUND GRADIENT EXAMPLE */
+.bg-gradient-example {
+    background: linear-gradient(45deg, #FF6B6B, #4ECDC4);
+    /* 
+    Question: What does 45deg mean?
+    Answer: Angle of gradient line. 45deg = diagonal from top-left to bottom-right
+    Other angles: 0deg (left to right), 90deg (top to bottom), 180deg (right to left)
+    */
+    
+    color: white;
+    font-weight: bold;
+}
+
+/* BACKGROUND WITH OPACITY */
+.bg-opacity-example {
+    background-color: rgba(255, 107, 107, 0.7);
+    /* 
+    RGBA = Red, Green, Blue, Alpha
+    (255, 107, 107, 0.7) = red-ish color at 70% opacity
+    0 = completely transparent
+    1 = completely opaque (solid)
+    */
+    
+    color: white;
+    font-weight: bold;
+}
+
+.bg-example {
+    height: 120px;
+    display: flex;
+    justify-content: center;
+    align-items: center;
+    border-radius: 8px;
+    margin: 15px 0;
+    font-weight: bold;
+}
+
+/* ============================================================
+   SECTION 2: CSS SELECTORS DEMONSTRATION
+   ============================================================ */
+
+.selectors-demo {
+    background: white;
+    padding: 20px;
+    border-radius: 8px;
+    border: 2px solid #667eea;
+}
+
+/* 
+ELEMENT SELECTOR - Targets all <p> tags
+Question: Does this affect all paragraphs?
+Answer: Yes! Element selectors affect ALL elements of that type
+Specificity: Lowest (easiest to override)
+*/
+p {
+    margin: 10px 0;
+}
+
+.selector-demo {
+    background: #E8F4F8;
+    padding: 10px;
+    border-radius: 5px;
+    margin: 10px 0;
+    border-left: 3px solid #667eea;
+}
+
+/* 
+ID SELECTOR - Targets #unique-id (only one element)
+Question: Why use ID instead of class?
+Answer: When you need to target ONE specific element (high specificity)
+Specificity: Higher than class
+*/
+#unique-id {
+    background: #FFF9E6;
+    border-left-color: #FFB84D;
+}
+
+/* 
+ATTRIBUTE SELECTOR - Targets elements by attributes
+Question: What other attributes can you select?
+Answer: [type="email"], [placeholder], [disabled], [required], etc.
+*/
+input[type="text"] {
+    width: 100%;
+    padding: 10px;
+    margin: 10px 0;
+    border: 2px solid #667eea;
+    border-radius: 5px;
+    font-family: inherit;
+}
+
+/* 
+PSEUDO-CLASS SELECTOR - Targets element STATE
+Question: What other pseudo-classes exist?
+Answer: :hover, :focus, :active, :visited, :disabled, :first-child, etc.
+*/
+.demo-button:hover {
+    background-color: #667eea !important;
+}
+
+.selector-explanation {
+    background: #F0F4FF;
+    padding: 20px;
+    border-radius: 8px;
+    margin-top: 20px;
+    border: 2px solid #667eea;
+}
+
+.selector-explanation h4 {
+    color: #667eea;
+    margin-bottom: 10px;
+}
+
+.selector-explanation p {
+    margin: 8px 0;
+}
+
+/* ============================================================
+   SECTION 3: DISPLAY PROPERTY EXAMPLES
+   ============================================================ */
+
+/* BLOCK DISPLAY EXAMPLES */
+.display-block-1 {
+    display: block;
+    /* 
+    DISPLAY: BLOCK
+    Question: What's the default display of <div>?
+    Answer: block - takes full width, starts new line
+    
+    Properties:
+    ✓ Takes FULL width available
+    ✓ Starts on NEW LINE
+    ✓ Can set width and height
+    */
+    
+    width: 100%;
+    background: #667eea;
+    color: white;
+    padding: 15px;
+    margin: 10px 0;
+    text-align: center;
+    border-radius: 5px;
+}
+
+.display-block-2 {
+    display: block;
+    width: 100%;
+    background: #764ba2;
+    color: white;
+    padding: 15px;
+    margin: 10px 0;
+    text-align: center;
+    border-radius: 5px;
+}
+
+/* INLINE DISPLAY EXAMPLES */
+.display-inline-1, .display-inline-2, .display-inline-3 {
+    display: inline;
+    /* 
+    DISPLAY: INLINE
+    Question: What's the default display of <span>?
+    Answer: inline - flows with text, no new line
+    
+    Properties:
+    ✓ Flows WITH TEXT (no new line)
+    ✓ Width/height don't work
+    ✓ Only respects horizontal margin/padding
+    */
+    
+    background: #FF6B6B;
+    color: white;
+    padding: 5px 10px;
+    margin: 5px;
+    border-radius: 3px;
+}
+
+.display-inline-2 {
+    background: #4ECDC4;
+}
+
+.display-inline-3 {
+    background: #95E1D3;
+}
+
+/* INLINE-BLOCK DISPLAY EXAMPLES */
+.display-inline-block-1, .display-inline-block-2, .display-inline-block-3 {
+    display: inline-block;
+    /* 
+    DISPLAY: INLINE-BLOCK
+    Question: Best of both worlds?
+    Answer: Yes! Flows like inline BUT can set width/height like block
+    
+    Properties:
+    ✓ Flows like INLINE (side by side)
+    ✓ But CAN SET width/height like BLOCK
+    ✓ Respects all margins and padding
+    */
+    
+    width: 100px;
+    height: 100px;
+    background: #667eea;
+    color: white;
+    display: flex;
+    justify-content: center;
+    align-items: center;
+    margin: 10px;
+    border-radius: 8px;
+    font-weight: bold;
+}
+
+.display-inline-block-2 {
+    background: #764ba2;
+}
+
+.display-inline-block-3 {
+    background: #FF6B6B;
+}
+
+/* FLEX DISPLAY EXAMPLE */
+.flex-demo {
+    display: flex;
+    /* 
+    DISPLAY: FLEX
+    Question: What does display: flex do?
+    Answer: Makes container a flex container. Children become flex items.
+    
+    Key points:
+    ✓ Children arranged flexibly (default: row)
+    ✓ Use justify-content for main axis (horizontal in row)
+    ✓ Use align-items for cross axis (vertical in row)
+    ✓ All children same height by default
+    */
+    
+    gap: 10px;
+    /* Space between flex items */
+    
+    height: 150px;
+    padding: 10px;
+    background: #f0f0f0;
+    border-radius: 8px;
+    margin: 15px 0;
+    border: 2px dashed #667eea;
+}
+
+.flex-item {
+    flex: 1;
+    /* 
+    FLEX: 1 (shorthand)
+    Question: What does flex: 1 do?
+    Answer: Makes item grow equally to fill available space
+    */
+    
+    background: #667eea;
+    color: white;
+    display: flex;
+    justify-content: center;
+    align-items: center;
+    border-radius: 5px;
+    font-weight: bold;
+}
+
+/* ============================================================
+   SECTION 4: FLEXBOX PROPERTY VARIATIONS
+   ============================================================ */
+
+/* JUSTIFY-CONTENT EXAMPLES */
+.flex-start {
+    justify-content: flex-start;
+    /* Items aligned to start (left) */
+}
+
+.flex-center {
+    justify-content: center;
+    /* Items centered */
+}
+
+.flex-space-between {
+    justify-content: space-between;
+    /* Even space between items */
+}
+
+.flex-space-around {
+    justify-content: space-around;
+    /* Space around items */
+}
+
+/* ALIGN-ITEMS EXAMPLES */
+.flex-align-start {
+    align-items: flex-start;
+    /* Items aligned to top */
+}
+
+.flex-align-center {
+    align-items: center;
+    /* Items centered vertically */
+}
+
+.flex-align-end {
+    align-items: flex-end;
+    /* Items aligned to bottom */
+}
+
+/* FLEX-DIRECTION EXAMPLES */
+.flex-row {
+    flex-direction: row;
+    /* Default - items left to right */
+}
+
+.flex-column {
+    flex-direction: column;
+    /* Items top to bottom */
+    height: auto;
+}
+
+.flex-column .flex-item {
+    width: 100%;
+    margin: 5px 0;
+}
+
+/* ============================================================
+   SECTION 5: HOVER EFFECTS
+   Question: What pseudo-class triggers hover effects?
+   Answer: :hover - triggered when mouse hovers over element
+   ============================================================ */
+
+/* Common button styles */
+.hover-button-1, .hover-button-2, .hover-button-3,
+.hover-button-4, .hover-button-5,
+.demo-button, .transition-button-1, .transition-button-2,
+.transition-button-3, .transition-button-linear,
+.transition-button-ease, .transition-button-ease-out,
+.transition-button-linear-2, .transition-button-all,
+.transition-button-color, .transition-button-transform,
+.transition-button-delay-0, .transition-button-delay-0-5,
+.transition-button-delay-1 {
+    padding: 12px 24px;
+    margin: 10px 5px;
+    border: none;
+    border-radius: 5px;
+    cursor: pointer;
+    font-weight: bold;
+    font-size: 1rem;
+    background: #667eea;
+    color: white;
+    /* All buttons share these hover effects during transitions */
+}
+
+/* HOVER EFFECT 1: Color Change */
+.hover-button-1 {
+    background: #667eea;
+}
+
+.hover-button-1:hover {
+    background: #FF6B6B;
+    /* Color changes instantly (no transition) */
+}
+
+/* HOVER EFFECT 2: Scale (Make Bigger) */
+.hover-button-2 {
+    background: #667eea;
+    transition: all 0.3s ease;
+    /* Prepare to animate */
+}
+
+.hover-button-2:hover {
+    transform: scale(1.15);
+    /* 
+    TRANSFORM: SCALE
+    Question: What does scale(1.15) do?
+    Answer: Enlarges to 115% of original size
+    
+    1.0 = 100% (original)
+    1.15 = 115% (15% bigger)
+    1.5 = 150% (50% bigger)
+    0.8 = 80% (20% smaller)
+    */
+}
+
+/* HOVER EFFECT 3: Shadow */
+.hover-button-3 {
+    background: #764ba2;
+    transition: all 0.3s ease;
+}
+
+.hover-button-3:hover {
+    box-shadow: 0 8px 15px rgba(0, 0, 0, 0.3);
+    /* Shadow grows on hover, creating depth */
+}
+
+/* HOVER EFFECT 4: Rotate */
+.hover-button-4 {
+    background: #FF6B6B;
+    transition: all 0.3s ease;
+}
+
+.hover-button-4:hover {
+    transform: rotate(5deg);
+    /* 
+    TRANSFORM: ROTATE
+    Question: What does rotate(5deg) do?
+    Answer: Rotates element 5 degrees clockwise
+    
+    Positive = clockwise
+    Negative = counter-clockwise
+    360deg = full circle
+    */
+}
+
+/* HOVER EFFECT 5: Multiple Transforms Combined */
+.hover-button-5 {
+    background: #4ECDC4;
+    transition: all 0.3s ease;
+}
+
+.hover-button-5:hover {
+    transform: scale(1.1) rotate(3deg) translateY(-3px);
+    box-shadow: 0 8px 15px rgba(0, 0, 0, 0.2);
+    /* 
+    Multiple transforms combined:
+    - scale(1.1) = grow 10%
+    - rotate(3deg) = tilt 3 degrees
+    - translateY(-3px) = move up 3px
+    */
+}
+
+.demo-button {
+    background: #667eea;
+    transition: all 0.3s ease;
+}
+
+.demo-button:hover {
+    transform: scale(1.1);
+    box-shadow: 0 8px 15px rgba(0, 0, 0, 0.2);
+}
+
+/* ============================================================
+   SECTION 6: TRANSFORM PROPERTIES
+   ============================================================ */
+
+.transform-demo {
+    width: 150px;
+    height: 80px;
+    background: linear-gradient(135deg, #667eea, #764ba2);
+    color: white;
+    display: flex;
+    justify-content: center;
+    align-items: center;
+    margin: 15px;
+    border-radius: 8px;
+    font-weight: bold;
+    display: inline-flex;
+    /* inline-flex = flex behavior but flows like inline */
+}
+
+/* ROTATE EXAMPLES */
+.rotate-5 {
+    transform: rotate(5deg);
+}
+
+.rotate-45 {
+    transform: rotate(45deg);
+}
+
+.rotate-90 {
+    transform: rotate(90deg);
+}
+
+/* SCALE EXAMPLES */
+.scale-1 {
+    transform: scale(1);
+}
+
+.scale-1-5 {
+    transform: scale(1.5);
+}
+
+.scale-2 {
+    transform: scale(2);
+}
+
+/* TRANSLATE EXAMPLES */
+.translate-20-10 {
+    transform: translate(20px, 10px);
+    /* Move 20px right, 10px down */
+}
+
+.translate-50 {
+    transform: translateX(50px);
+    /* Move 50px right only */
+}
+
+.translate-y-30 {
+    transform: translateY(30px);
+    /* Move 30px down only */
+}
+
+/* SKEW EXAMPLES */
+.skew-10 {
+    transform: skew(10deg);
+}
+
+.skew-20-10 {
+    transform: skew(20deg, 10deg);
+}
+
+/* ============================================================
+   SECTION 7: TRANSITIONS (ANIMATIONS)
+   Question: What's needed for a smooth animation?
+   Answer: Original state + Hover state + transition property
+   ============================================================ */
+
+/* TRANSITION DURATION EXAMPLES */
+.transition-button-1 {
+    background: #667eea;
+    /* NO transition - changes happen instantly */
+}
+
+.transition-button-1:hover {
+    background: #FF6B6B;
+}
+
+.transition-button-2 {
+    background: #667eea;
+    transition: background 0.3s ease;
+    /* 
+    TRANSITION: property duration timing-function;
+    Question: What happens without transition?
+    Answer: Changes are instant. With transition, they animate smoothly.
+    */
+}
+
+.transition-button-2:hover {
+    background: #FF6B6B;
+}
+
+.transition-button-3 {
+    background: #667eea;
+    transition: background 1s ease;
+    /* Slower animation (1 second instead of 0.3) */
+}
+
+.transition-button-3:hover {
+    background: #FF6B6B;
+}
+
+/* TIMING FUNCTION EXAMPLES */
+.transition-button-linear {
+    background: #667eea;
+    transition: all 0.5s ease-in;
+    /* 
+    ease-in = starts slow, ends fast
+    Good for: elements entering/appearing
+    */
+}
+
+.transition-button-linear:hover {
+    background: #FF6B6B;
+    transform: scale(1.1);
+}
+
+.transition-button-ease {
+    background: #667eea;
+    transition: all 0.5s ease;
+    /* 
+    ease = default, slightly curved (slow at start and end)
+    Good for: general smooth animations
+    */
+}
+
+.transition-button-ease:hover {
+    background: #4ECDC4;
+    transform: scale(1.1);
+}
+
+.transition-button-ease-out {
+    background: #667eea;
+    transition: all 0.5s ease-out;
+    /* 
+    ease-out = starts fast, ends slow
+    Good for: elements leaving/disappearing
+    */
+}
+
+.transition-button-ease-out:hover {
+    background: #95E1D3;
+    transform: scale(1.1);
+}
+
+.transition-button-linear-2 {
+    background: #667eea;
+    transition: all 0.5s linear;
+    /* 
+    linear = same speed throughout
+    Good for: continuous rotations, steady animations
+    */
+}
+
+.transition-button-linear-2:hover {
+    background: #FF6B6B;
+    transform: rotate(360deg);
+}
+
+/* SHORTHAND TRANSITION EXAMPLES */
+.transition-button-all {
+    background: #667eea;
+    transition: all 0.3s ease;
+    /* 
+    all = animate ALL properties that change
+    Good for: general purpose animations
+    */
+}
+
+.transition-button-all:hover {
+    background: #FF6B6B;
+    transform: scale(1.1);
+    box-shadow: 0 8px 15px rgba(0, 0, 0, 0.2);
+}
+
+.transition-button-color {
+    background: #667eea;
+    transition: background 0.3s ease;
+    /* 
+    Specify property name = only that property animates
+    Other properties change instantly
+    */
+}
+
+.transition-button-color:hover {
+    background: #FF6B6B;
+    transform: scale(1.1); /* This changes instantly, not animated */
+}
+
+.transition-button-transform {
+    background: #667eea;
+    transition: transform 0.3s ease;
+    /* Only transform animates, background changes instantly */
+}
+
+.transition-button-transform:hover {
+    background: #FF6B6B; /* Instant */
+    transform: scale(1.1); /* Animated */
+}
+
+/* TRANSITION DELAY EXAMPLES */
+.transition-button-delay-0 {
+    background: #667eea;
+    transition: all 0.3s ease 0s;
+    /* 0s delay = starts immediately */
+}
+
+.transition-button-delay-0:hover {
+    background: #FF6B6B;
+    transform: scale(1.1);
+}
+
+.transition-button-delay-0-5 {
+    background: #667eea;
+    transition: all 0.3s ease 0.5s;
+    /* 
+    0.5s delay = waits 0.5 seconds before animating
+    Question: When is delay useful?
+    Answer: Staggered animations (each element delays different)
+    */
+}
+
+.transition-button-delay-0-5:hover {
+    background: #4ECDC4;
+    transform: scale(1.1);
+}
+
+.transition-button-delay-1 {
+    background: #667eea;
+    transition: all 0.3s ease 1s;
+    /* 1s delay = waits longer before animating */
+}
+
+.transition-button-delay-1:hover {
+    background: #95E1D3;
+    transform: scale(1.1);
+}
+
+/* ============================================================
+   SECTION 8: INTERACTIVE CARD (ALL CONCEPTS COMBINED)
+   ============================================================ */
+
+.interactive-card {
+    background: linear-gradient(135deg, #667eea, #764ba2);
+    /* Background gradient - Concept 1 */
+    
+    color: white;
+    padding: 30px;
+    border-radius: 12px;
+    
+    /* Flexbox layout - Concept 3 & 4 */
+    display: flex;
+    flex-direction: column;
+    justify-content: center;
+    align-items: center;
+    
+    /* Hover effects and transitions - Concept 5 & 7 */
+    transition: all 0.4s ease;
+    /* 
+    MASTER CONCEPT: Transition
+    All changes (transform, shadow, color) animate smoothly
+    */
+    
+    cursor: pointer;
+    box-shadow: 0 10px 30px rgba(0, 0, 0, 0.2);
+    
+    max-width: 400px;
+    margin: 20px auto;
+}
+
+.interactive-card:hover {
+    /* All these changes animate smoothly due to transition */
+    transform: scale(1.08) translateY(-10px);
+    /* Transform - Concept 6 (scale + translate) */
+    
+    box-shadow: 0 20px 50px rgba(0, 0, 0, 0.4);
+    /* Enhanced shadow - gives depth effect */
+}
+
+.card-icon {
+    font-size: 3rem;
+    margin-bottom: 15px;
+    transition: transform 0.3s ease;
+}
+
+.interactive-card:hover .card-icon {
+    transform: scale(1.2) rotate(10deg);
+}
+
+.interactive-card h4 {
+    font-size: 1.5rem;
+    margin-bottom: 10px;
+}
+
+.interactive-card p {
+    margin-bottom: 15px;
+    opacity: 0.95;
+}
+
+.card-features {
+    list-style: none;
+    text-align: left;
+    width: 100%;
+}
+
+.card-features li {
+    padding: 5px 0;
+    margin: 5px 0;
+}
+
+/* ============================================================
+   REFERENCE SECTION
+   ============================================================ */
+
+.reference-section {
+    background: #f9f9f9;
+}
+
+.reference-grid {
+    display: grid;
+    grid-template-columns: repeat(auto-fit, minmax(300px, 1fr));
+    /* 
+    CSS Grid - responsive grid
+    auto-fit = fit as many columns as possible
+    minmax(300px, 1fr) = min 300px, max equal space
+    */
+    
+    gap: 20px;
+    margin-top: 20px;
+}
+
+.reference-card {
+    background: white;
+    padding: 20px;
+    border-radius: 8px;
+    border-left: 4px solid #667eea;
+    box-shadow: 0 4px 8px rgba(0, 0, 0, 0.1);
+    transition: all 0.3s ease;
+}
+
+.reference-card:hover {
+    transform: translateY(-5px);
+    box-shadow: 0 8px 16px rgba(0, 0, 0, 0.15);
+}
+
+.reference-card h4 {
+    color: #667eea;
+    margin-bottom: 15px;
+}
+
+.reference-card code {
+    display: block;
+    background: #f0f0f0;
+    padding: 10px;
+    margin: 8px 0;
+    border-radius: 4px;
+    font-size: 0.9rem;
+    color: #333;
+    overflow-x: auto;
+}
+
+/* ============================================================
+   FOOTER
+   ============================================================ */
+
+.footer {
+    background: rgba(0, 0, 0, 0.8);
+    color: white;
+    text-align: center;
+    padding: 30px;
+    margin-top: 40px;
+    border-top: 3px solid #667eea;
+}
+
+.footer h3 {
+    margin-bottom: 15px;
+    color: #667eea;
+}
+
+.footer p {
+    margin: 8px 0;
+}
+
+/* ============================================================
+   RESPONSIVE DESIGN
+   Question: What are media queries?
+   Answer: Apply different CSS at different screen sizes
+   ============================================================ */
+
+@media (max-width: 768px) {
+    /* Tablets and mobile devices */
+    
+    .container {
+        padding: 20px;
+    }
+    
+    .header {
+        padding: 20px;
+    }
+    
+    .section-title {
+        font-size: 1.5rem;
+    }
+    
+    .transform-demo {
+        width: 120px;
+        height: 70px;
+        font-size: 0.9rem;
+    }
+    
+    .reference-grid {
+        grid-template-columns: 1fr;
+        /* Single column on mobile */
+    }
+}
+
+@media (max-width: 480px) {
+    /* Small mobile devices */
+    
+    body {
+        padding: 10px;
+    }
+    
+    .container {
+        padding: 15px;
+    }
+    
+    .header h1 {
+        font-size: 1.8rem;
+    }
+    
+    .subtitle {
+        font-size: 1rem;
+    }
+}
+
+/* ============================================================
+   ACCESSIBILITY
+   Question: Why is outline important?
+   Answer: Helps keyboard users see where they are when tabbing
+   ============================================================ */
+
+button:focus {
+    outline: 3px solid #FF6B6B;
+    outline-offset: 2px;
+}
+
+input:focus {
+    outline: 3px solid #667eea;
+    outline-offset: 2px;
+}

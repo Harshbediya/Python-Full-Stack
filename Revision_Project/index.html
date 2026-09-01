@@ -1,0 +1,160 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Revision Project - Student Profile Card</title>
+    <!-- Question: Why do we need the viewport meta tag for responsive design? -->
+    <link rel="stylesheet" href="style.css">
+</head>
+<body>
+    <!-- 
+    QUESTION: What's the purpose of using semantic HTML tags like <header>, <main>, <section>?
+    EXPLANATION: Semantic tags improve accessibility, SEO, and code readability
+    -->
+    
+    <header class="header">
+        <h1>Student Profile Portal</h1>
+        <p class="subtitle">Learn • Practice • Revise</p>
+    </header>
+
+    <main class="container">
+        <!-- 
+        SECTION 1: Profile Card
+        QUESTION: Why use flexbox for creating layouts? What problem does it solve?
+        EXPLANATION: Flexbox makes it easy to align items vertically and horizontally
+        -->
+        <section class="profile-section">
+            <div class="profile-card">
+                <img src="https://via.placeholder.com/150" alt="Student Avatar" class="profile-image">
+                <h2>John Developer</h2>
+                <p class="role">Web Developer Student</p>
+                <p class="bio">Learning HTML, CSS, and JavaScript to build amazing websites!</p>
+                
+                <!-- QUESTION: What's the difference between inline and block elements? -->
+                <div class="skills-container">
+                    <span class="skill-tag">HTML</span>
+                    <span class="skill-tag">CSS</span>
+                    <span class="skill-tag">JavaScript</span>
+                </div>
+            </div>
+        </section>
+
+        <!-- 
+        SECTION 2: Learning Concepts
+        QUESTION: How does CSS Grid differ from Flexbox?
+        EXPLANATION: Grid is 2D (rows and columns), Flexbox is 1D (row or column)
+        -->
+        <section class="concepts-section">
+            <h2>Web Concepts I've Learned</h2>
+            <div class="concepts-grid">
+                
+                <div class="concept-card">
+                    <h3>Display Property</h3>
+                    <!-- 
+                    QUESTION: Name three values for the display property and what they do
+                    HINT: Think about block, inline, flex, grid
+                    -->
+                    <p>Controls how elements are rendered on the page</p>
+                    <ul>
+                        <li>block - Takes full width, starts new line</li>
+                        <li>inline - Flows with text, no width/height</li>
+                        <li>flex - Flexible box layout</li>
+                        <li>grid - 2D grid layout</li>
+                    </ul>
+                </div>
+
+                <div class="concept-card">
+                    <h3>Flexbox Layout</h3>
+                    <!-- 
+                    QUESTION: What are the main flexbox properties you need to know?
+                    -->
+                    <p>One-dimensional layout method for arranging items</p>
+                    <ul>
+                        <li>justify-content - Horizontal alignment</li>
+                        <li>align-items - Vertical alignment</li>
+                        <li>flex-direction - Row or column</li>
+                        <li>flex-wrap - Wrap items or not</li>
+                    </ul>
+                </div>
+
+                <div class="concept-card">
+                    <h3>Hover & Transitions</h3>
+                    <!-- 
+                    QUESTION: What happens when you hover over elements with transitions?
+                    EXPLANATION: Transitions create smooth animations between states
+                    -->
+                    <p>Interactive effects when users interact with elements</p>
+                    <ul>
+                        <li>Hover - Changes when mouse is over element</li>
+                        <li>Transition - Smoothly animates changes</li>
+                        <li>Transform - Rotate, scale, skew elements</li>
+                    </ul>
+                </div>
+
+                <div class="concept-card">
+                    <h3>Forms & Validation</h3>
+                    <!-- 
+                    QUESTION: Why is form validation important for user experience?
+                    -->
+                    <p>Collecting user input with proper structure</p>
+                    <ul>
+                        <li>Input types - text, email, password</li>
+                        <li>Labels - Associated with inputs</li>
+                        <li>Validation - Check data format</li>
+                        <li>Feedback - User knows if correct</li>
+                    </ul>
+                </div>
+            </div>
+        </section>
+
+        <!-- 
+        SECTION 3: Interactive Form
+        QUESTION: What's the purpose of the <label> element and how is it connected to input?
+        EXPLANATION: Labels improve accessibility and user experience by making forms clickable
+        -->
+        <section class="form-section">
+            <h2>Quick Feedback Form</h2>
+            <form class="feedback-form">
+                <div class="form-group">
+                    <label for="name">Your Name:</label>
+                    <!-- QUESTION: What does the 'for' attribute in label do? -->
+                    <input type="text" id="name" name="name" placeholder="Enter your name" required>
+                </div>
+
+                <div class="form-group">
+                    <label for="email">Email Address:</label>
+                    <!-- QUESTION: Why use type="email" instead of type="text"? -->
+                    <input type="email" id="email" name="email" placeholder="your.email@example.com" required>
+                </div>
+
+                <div class="form-group">
+                    <label for="message">Your Message:</label>
+                    <textarea id="message" name="message" rows="4" placeholder="Share your thoughts..." required></textarea>
+                </div>
+
+                <button type="submit" class="submit-btn">Submit Feedback</button>
+                <!-- QUESTION: What's the difference between type="submit" and type="button"? -->
+            </form>
+        </section>
+
+        <!-- 
+        SECTION 4: Practice Challenge
+        QUESTION: Can you explain what CSS selectors are used in the styling?
+        -->
+        <section class="challenge-section">
+            <h2>Quick Challenge</h2>
+            <div class="challenge-box">
+                <h3>Try Hovering Over This Box!</h3>
+                <p>This box demonstrates hover effects and transitions. Notice how it responds smoothly to your mouse movement.</p>
+            </div>
+        </section>
+    </main>
+
+    <footer class="footer">
+        <!-- QUESTION: Why is the footer separate from main content? What semantic benefit does it provide? -->
+        <p>&copy; 2024 Web Learning Revision Project. All rights reserved.</p>
+        <p class="footer-hint">💡 Try inspecting this page with Developer Tools (F12) to see the HTML structure and CSS!</p>
+    </footer>
+</body>
+</html>

@@ -1,0 +1,451 @@
+/* ================================
+   REVISION PROJECT - STYLE.CSS
+   Web Concepts Practice
+   ================================
+   
+   QUESTION: What's the purpose of the universal selector (*)?
+   EXPLANATION: Targets all elements on the page
+*/
+
+* {
+    /* 
+    QUESTION: What does margin: 0 and padding: 0 do?
+    EXPLANATION: Removes default browser spacing - gives us clean slate
+    */
+    margin: 0;
+    padding: 0;
+    box-sizing: border-box;
+    /* 
+    QUESTION: What does box-sizing: border-box do?
+    EXPLANATION: Includes padding and border in width/height calculations (easier sizing)
+    */
+}
+
+/* ================================
+   VARIABLES & COLOR SCHEME
+   QUESTION: What are CSS variables and why use them?
+   EXPLANATION: Define reusable values (colors, fonts, sizes) - easier to maintain
+   ================================ */
+:root {
+    --primary-color: #3498db;      /* Blue */
+    --secondary-color: #2ecc71;    /* Green */
+    --accent-color: #e74c3c;       /* Red */
+    --text-dark: #2c3e50;          /* Dark gray */
+    --text-light: #ecf0f1;         /* Light gray */
+    --border-radius: 8px;
+    --shadow: 0 4px 6px rgba(0, 0, 0, 0.1);
+    --transition: all 0.3s ease;
+}
+
+/* ================================
+   BODY & GENERAL STYLES
+   QUESTION: Why set font-family on body instead of individual elements?
+   EXPLANATION: Inheritance - all child elements inherit this font (DRY principle)
+   ================================ */
+body {
+    font-family: 'Segoe UI', Tahoma, Geneva, Verdana, sans-serif;
+    line-height: 1.6;              /* Improves readability */
+    color: var(--text-dark);
+    background: linear-gradient(135deg, #667eea 0%, #764ba2 100%);
+    /* 
+    QUESTION: What's a gradient and how does it differ from a solid color?
+    EXPLANATION: Gradient smoothly transitions between colors - more modern look
+    */
+    min-height: 100vh;             /* Ensures body takes full viewport height */
+}
+
+/* ================================
+   HEADER SECTION
+   QUESTION: What's the purpose of semantic tags like <header>?
+   EXPLANATION: Improves accessibility and SEO - shows structure to search engines
+   ================================ */
+.header {
+    background-color: var(--primary-color);
+    color: white;
+    padding: 2rem;
+    text-align: center;
+    box-shadow: var(--shadow);
+    margin-bottom: 2rem;
+}
+
+.header h1 {
+    font-size: 2.5rem;
+    margin-bottom: 0.5rem;
+}
+
+.subtitle {
+    font-size: 1.1rem;
+    opacity: 0.9;                  /* Slightly transparent */
+}
+
+/* ================================
+   CONTAINER & LAYOUT
+   QUESTION: Why use a max-width on container?
+   EXPLANATION: Prevents content from stretching too wide on large screens (better readability)
+   ================================ */
+.container {
+    max-width: 1200px;
+    margin: 0 auto;
+    padding: 0 1rem;
+}
+
+/* ================================
+   PROFILE SECTION
+   QUESTION: What does display: flex do?
+   EXPLANATION: Activates flexbox layout - arranges children in a row (by default)
+   ================================ */
+.profile-section {
+    display: flex;
+    justify-content: center;
+    margin-bottom: 3rem;
+}
+
+.profile-card {
+    background: white;
+    padding: 2rem;
+    border-radius: var(--border-radius);
+    box-shadow: var(--shadow);
+    text-align: center;
+    width: 100%;
+    max-width: 400px;
+    /* 
+    QUESTION: What's the difference between width: 100% and max-width: 400px?
+    EXPLANATION: 100% makes it responsive, max-width prevents it from being too wide
+    */
+}
+
+.profile-image {
+    width: 150px;
+    height: 150px;
+    border-radius: 50%;            /* Circle shape - 50% makes it circular */
+    border: 4px solid var(--primary-color);
+    margin-bottom: 1rem;
+    object-fit: cover;             /* Ensures image fills container properly */
+}
+
+.profile-card h2 {
+    font-size: 1.8rem;
+    margin-bottom: 0.5rem;
+    color: var(--primary-color);
+}
+
+.role {
+    color: var(--secondary-color);
+    font-weight: bold;
+    margin-bottom: 1rem;
+}
+
+.bio {
+    color: var(--text-dark);
+    margin-bottom: 1.5rem;
+    line-height: 1.6;
+}
+
+/* ================================
+   SKILLS CONTAINER
+   QUESTION: How does justify-content: center align items?
+   EXPLANATION: Centers items along the main axis (horizontally in a row)
+   ================================ */
+.skills-container {
+    display: flex;
+    justify-content: center;
+    gap: 0.5rem;                   /* Space between items */
+    flex-wrap: wrap;               /* Wraps to next line if needed */
+}
+
+.skill-tag {
+    background-color: var(--secondary-color);
+    color: white;
+    padding: 0.5rem 1rem;
+    border-radius: 20px;           /* Pill-shaped buttons */
+    font-size: 0.9rem;
+    font-weight: bold;
+    display: inline-block;         /* Respects padding */
+}
+
+/* ================================
+   CONCEPTS SECTION
+   QUESTION: What does grid-template-columns: repeat(auto-fit, minmax(250px, 1fr)) do?
+   EXPLANATION: Creates responsive columns - fits as many 250px columns as possible
+   ================================ */
+.concepts-section {
+    margin-bottom: 3rem;
+}
+
+.concepts-section h2 {
+    text-align: center;
+    margin-bottom: 2rem;
+    color: white;
+    font-size: 2rem;
+}
+
+.concepts-grid {
+    display: grid;
+    grid-template-columns: repeat(auto-fit, minmax(250px, 1fr));
+    /* 
+    QUESTION: Why use 'auto-fit' instead of a fixed number like 2 or 4?
+    EXPLANATION: Makes layout responsive - adjusts columns based on screen size
+    */
+    gap: 1.5rem;                   /* Space between grid items */
+}
+
+.concept-card {
+    background: white;
+    padding: 1.5rem;
+    border-radius: var(--border-radius);
+    box-shadow: var(--shadow);
+    /* 
+    TRANSITION & HOVER EFFECTS
+    QUESTION: What does the transition property do?
+    EXPLANATION: Smoothly animates changes over 0.3 seconds
+    */
+    transition: var(--transition);
+}
+
+.concept-card:hover {
+    /* 
+    QUESTION: What happens when you hover over a concept card?
+    EXPLANATION: It moves up and gets a bigger shadow - creates depth effect
+    */
+    transform: translateY(-10px);  /* Move up 10px */
+    box-shadow: 0 8px 15px rgba(0, 0, 0, 0.2);
+    /* Bigger shadow when elevated */
+}
+
+.concept-card h3 {
+    color: var(--primary-color);
+    margin-bottom: 0.5rem;
+    font-size: 1.3rem;
+}
+
+.concept-card ul {
+    margin-left: 1.5rem;
+    color: var(--text-dark);
+}
+
+.concept-card li {
+    margin-bottom: 0.5rem;
+    font-size: 0.9rem;
+}
+
+/* ================================
+   FORM SECTION
+   QUESTION: Why should forms be centered with max-width?
+   EXPLANATION: Improves usability - users don't have to look across wide screen
+   ================================ */
+.form-section {
+    background: white;
+    padding: 2rem;
+    border-radius: var(--border-radius);
+    box-shadow: var(--shadow);
+    max-width: 600px;
+    margin: 0 auto 3rem;
+}
+
+.form-section h2 {
+    margin-bottom: 1.5rem;
+    color: var(--primary-color);
+    text-align: center;
+}
+
+.form-group {
+    margin-bottom: 1.5rem;
+    display: flex;
+    flex-direction: column;
+    /* 
+    QUESTION: What does flex-direction: column do?
+    EXPLANATION: Stacks items vertically instead of horizontally
+    */
+}
+
+.form-group label {
+    font-weight: bold;
+    margin-bottom: 0.5rem;
+    color: var(--text-dark);
+    font-size: 0.95rem;
+}
+
+.form-group input,
+.form-group textarea {
+    padding: 0.75rem;
+    border: 2px solid #ddd;
+    border-radius: 4px;
+    font-family: inherit;          /* Inherits body font */
+    font-size: 1rem;
+    /* 
+    QUESTION: What does the focus pseudo-class do?
+    EXPLANATION: Styles element when user clicks/focuses on it
+    */
+    transition: var(--transition);
+}
+
+.form-group input:focus,
+.form-group textarea:focus {
+    outline: none;                 /* Remove browser default */
+    border-color: var(--primary-color);
+    box-shadow: 0 0 0 3px rgba(52, 152, 219, 0.1);
+    /* Colored glow on focus */
+}
+
+/* ================================
+   SUBMIT BUTTON
+   QUESTION: What CSS properties make a button look and feel interactive?
+   EXPLANATION: Cursor change, color, transition, and hover effects
+   ================================ */
+.submit-btn {
+    background-color: var(--secondary-color);
+    color: white;
+    padding: 1rem 2rem;
+    border: none;                  /* Remove default border */
+    border-radius: 4px;
+    font-size: 1rem;
+    font-weight: bold;
+    cursor: pointer;               /* Changes cursor to pointer */
+    transition: var(--transition);
+    width: 100%;                   /* Full width of form */
+}
+
+.submit-btn:hover {
+    background-color: #27ae60;     /* Darker green on hover */
+    transform: translateY(-2px);   /* Slight lift effect */
+    box-shadow: 0 4px 10px rgba(46, 204, 113, 0.3);
+}
+
+.submit-btn:active {
+    /* 
+    QUESTION: What's the difference between :hover and :active?
+    EXPLANATION: :hover = mouse over, :active = mouse clicked/holding
+    */
+    transform: translateY(0);      /* Back to original position */
+}
+
+/* ================================
+   CHALLENGE SECTION
+   QUESTION: What creates the smooth animation when hovering on the challenge box?
+   ================================ */
+.challenge-section {
+    margin-bottom: 3rem;
+}
+
+.challenge-section h2 {
+    text-align: center;
+    color: white;
+    margin-bottom: 2rem;
+    font-size: 2rem;
+}
+
+.challenge-box {
+    background: linear-gradient(135deg, var(--secondary-color), var(--primary-color));
+    color: white;
+    padding: 2rem;
+    border-radius: var(--border-radius);
+    box-shadow: var(--shadow);
+    text-align: center;
+    transition: var(--transition);
+    cursor: pointer;
+    /* 
+    QUESTION: What visual changes happen on hover?
+    */
+}
+
+.challenge-box:hover {
+    transform: scale(1.05);        /* Grow 5% larger */
+    box-shadow: 0 10px 25px rgba(0, 0, 0, 0.2);
+}
+
+.challenge-box h3 {
+    font-size: 1.5rem;
+    margin-bottom: 1rem;
+}
+
+/* ================================
+   FOOTER SECTION
+   QUESTION: Why put footer content in a <footer> tag instead of a <div>?
+   EXPLANATION: Semantic meaning - helps assistive tech and SEO understand page structure
+   ================================ */
+.footer {
+    background-color: var(--text-dark);
+    color: var(--text-light);
+    text-align: center;
+    padding: 2rem;
+    margin-top: 3rem;
+    box-shadow: 0 -2px 6px rgba(0, 0, 0, 0.1);
+}
+
+.footer p {
+    margin-bottom: 0.5rem;
+}
+
+.footer-hint {
+    font-size: 0.9rem;
+    opacity: 0.8;
+    font-style: italic;
+}
+
+/* ================================
+   RESPONSIVE DESIGN
+   QUESTION: What are media queries and why do we need them?
+   EXPLANATION: Apply different styles at different screen sizes - mobile first design
+   ================================ */
+@media (max-width: 768px) {
+    /* Tablets and smaller devices */
+    
+    .header h1 {
+        font-size: 1.8rem;
+    }
+
+    .concepts-grid {
+        grid-template-columns: 1fr;
+        /* 
+        QUESTION: Why change to 1 column on mobile?
+        EXPLANATION: Narrows screen, need single column for readability
+        */
+    }
+
+    .form-section {
+        padding: 1.5rem;
+    }
+
+    .submit-btn {
+        padding: 0.8rem 1.5rem;
+    }
+}
+
+@media (max-width: 480px) {
+    /* Mobile phones */
+    
+    body {
+        font-size: 0.95rem;
+    }
+
+    .header {
+        padding: 1.5rem;
+    }
+
+    .header h1 {
+        font-size: 1.5rem;
+    }
+
+    .subtitle {
+        font-size: 1rem;
+    }
+
+    .profile-card {
+        padding: 1rem;
+    }
+
+    .container {
+        padding: 0 0.5rem;
+    }
+}
+
+/* ================================
+   ACCESSIBILITY
+   QUESTION: What does outline: 2px solid blue do?
+   EXPLANATION: Helps keyboard users see where they are when tabbing through page
+   ================================ */
+button:focus,
+input:focus,
+textarea:focus {
+    outline: 2px solid var(--primary-color);
+}
