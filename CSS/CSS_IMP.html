@@ -1,0 +1,271 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+	<meta charset="UTF-8">
+	<meta name="viewport" content="width=device-width, initial-scale=1.0">
+	<title>Important CSS Properties</title>
+	<style>
+		/* Basic page styling */
+		* {
+			box-sizing: border-box;
+		}
+
+		body {
+			margin: 0;
+			padding: 30px 16px;
+			background-color: #eef3f7;
+			color: #203040;
+			font-family: Arial, sans-serif;
+			line-height: 1.6;
+		}
+
+		.page {
+			/* Keep the lesson content centered and limit its maximum width. */
+			width: min(100%, 1100px);
+			margin: 0 auto;
+		}
+
+		h1 {
+			/* Center and color the main page heading. */
+			margin-bottom: 8px;
+			color: #123b5d;
+			text-align: center;
+		}
+
+		.intro {
+			margin: 0 auto 28px;
+			max-width: 720px;
+			text-align: center;
+		}
+
+		.property-grid {
+			/* Automatically create responsive columns for the lesson cards. */
+			display: grid;
+			grid-template-columns: repeat(auto-fit, minmax(260px, 1fr));
+			gap: 18px;
+		}
+
+		.lesson {
+			/* Style each lesson as a readable white content block. */
+			padding: 20px;
+			background-color: white;
+			border: 1px solid #c7d5df;
+			border-radius: 8px;
+			box-shadow: 0 3px 10px rgb(35 65 85 / 10%);
+		}
+
+		h2 {
+			margin-top: 0;
+			color: #176b87;
+			font-size: 20px;
+		}
+
+		code {
+			/* Highlight CSS property names inside the explanations. */
+			padding: 2px 5px;
+			background-color: #e8f1f5;
+			color: #9b3d22;
+			border-radius: 3px;
+		}
+
+		.demo {
+			/* Shared style for each live property demonstration. */
+			margin-top: 12px;
+			padding: 12px;
+			border: 2px solid #176b87;
+		}
+
+		.text-demo {
+			/* Demonstrate common text formatting properties. */
+			color: #c14924;
+			font-size: 20px;
+			font-weight: bold;
+			text-align: center;
+			text-transform: uppercase;
+			text-decoration: underline;
+		}
+
+		.box-demo {
+			/* Demonstrate width, height, margin, padding, border, and radius. */
+			width: 150px;
+			height: 80px;
+			margin: 12px auto;
+			padding: 15px;
+			background-color: #ffd166;
+			border: 5px solid #123b5d;
+			border-radius: 12px;
+			text-align: center;
+		}
+
+		.flex-demo {
+			/* Arrange child elements in a flexible horizontal layout. */
+			display: flex;
+			justify-content: space-between;
+			align-items: center;
+			gap: 8px;
+		}
+
+		.flex-demo span {
+			flex: 1;
+			padding: 8px;
+			background-color: #8ecae6;
+			text-align: center;
+		}
+
+		.position-demo {
+			/* Provide the containing block for the absolutely positioned label. */
+			position: relative;
+			height: 90px;
+			background-color: #d9ead3;
+		}
+
+		.position-demo span {
+			/* Place this label at the bottom-right corner of its parent. */
+			position: absolute;
+			right: 8px;
+			bottom: 8px;
+			padding: 4px 8px;
+			background-color: #386641;
+			color: white;
+		}
+
+		.display-demo span {
+			/* Inline-block keeps items on one line while allowing width and padding. */
+			display: inline-block;
+			width: 45%;
+			margin: 2%;
+			padding: 8px;
+			background-color: #f4a261;
+			text-align: center;
+		}
+
+		.button {
+			/* Style the link so it looks and behaves like a button. */
+			display: inline-block;
+			padding: 8px 14px;
+			background-color: #176b87;
+			color: white;
+			border-radius: 5px;
+			text-decoration: none;
+			transition: background-color 0.3s ease, transform 0.3s ease;
+		}
+
+		.button:hover {
+			/* Change the button color and position when the pointer is over it. */
+			background-color: #c14924;
+			transform: translateY(-2px);
+		}
+
+		.responsive-demo {
+			padding: 15px;
+			background-color: #bde0fe;
+			text-align: center;
+		}
+
+		@media (max-width: 600px) {
+			/* Apply smaller-screen styles when the viewport is 600px or narrower. */
+			body {
+				padding: 20px 10px;
+			}
+
+			h1 {
+				font-size: 28px;
+			}
+		}
+	</style>
+</head>
+<body>
+	<main class="page">
+		<!-- The page contains a heading and a collection of CSS lessons. -->
+		<h1>Important CSS Properties</h1>
+		<p class="intro">CSS properties control how HTML elements look, where they appear, and how they behave.</p>
+
+		<!-- CSS Grid places each article into a responsive card layout. -->
+		<section class="property-grid">
+			<!-- Example 1: text color and background color. -->
+			<article class="lesson">
+				<h2>1. Color and Background</h2>
+				<p><code>color</code> changes text color. <code>background-color</code> changes the background.</p>
+				<div class="demo" style="color: #176b87; background-color: #fff3b0;">Colored text and background</div>
+			</article>
+
+			<!-- Example 2: font and text formatting properties. -->
+			<article class="lesson">
+				<h2>2. Text Properties</h2>
+				<p><code>font-size</code>, <code>font-weight</code>, <code>text-align</code>, <code>text-transform</code>, and <code>text-decoration</code> style text.</p>
+				<div class="demo text-demo">Styled text</div>
+			</article>
+
+			<!-- Example 3: setting an element's width and height. -->
+			<article class="lesson">
+				<h2>3. Width and Height</h2>
+				<p><code>width</code> controls an element's horizontal size. <code>height</code> controls its vertical size.</p>
+				<div class="box-demo">150 x 80 px</div>
+			</article>
+
+			<!-- Example 4: the content, padding, border, and margin box model. -->
+			<article class="lesson">
+				<h2>4. Box Model</h2>
+				<p><code>padding</code> adds space inside the border. <code>margin</code> adds space outside it. <code>border</code> draws an edge.</p>
+				<div class="demo">Content inside the box</div>
+			</article>
+
+			<!-- Example 5: border thickness, color, and rounded corners. -->
+			<article class="lesson">
+				<h2>5. Border and Radius</h2>
+				<p><code>border-radius</code> rounds corners. Use <code>border</code> to set width, style, and color together.</p>
+				<div class="box-demo">Rounded box</div>
+			</article>
+
+			<!-- Example 6: arranging items with Flexbox. -->
+			<article class="lesson">
+				<h2>6. Flexbox</h2>
+				<p><code>display: flex</code> creates a flexible row or column. <code>justify-content</code> and <code>align-items</code> align its children.</p>
+				<div class="demo flex-demo"><span>One</span><span>Two</span><span>Three</span></div>
+			</article>
+
+			<!-- Example 7: arranging items in rows and columns with Grid. -->
+			<article class="lesson">
+				<h2>7. Grid</h2>
+				<p><code>display: grid</code> creates rows and columns. <code>grid-template-columns</code> defines the column sizes.</p>
+				<div class="demo property-grid"><span>Column 1</span><span>Column 2</span></div>
+			</article>
+
+			<!-- Example 8: changing how elements participate in the layout. -->
+			<article class="lesson">
+				<h2>8. Display</h2>
+				<p><code>display</code> decides how an element participates in layout. Common values are <code>block</code>, <code>inline</code>, <code>inline-block</code>, and <code>none</code>.</p>
+				<div class="demo display-demo"><span>Inline block</span><span>Inline block</span></div>
+			</article>
+
+			<!-- Example 9: positioning an element relative to its parent. -->
+			<article class="lesson">
+				<h2>9. Position</h2>
+				<p><code>position: relative</code> creates a reference box. <code>position: absolute</code> places an element relative to that box.</p>
+				<div class="demo position-demo"><span>Bottom right</span></div>
+			</article>
+
+			<!-- Example 10: adding hover feedback and a smooth transition. -->
+			<article class="lesson">
+				<h2>10. Hover and Transition</h2>
+				<p><code>:hover</code> applies styles when the pointer is over an element. <code>transition</code> makes changes smooth.</p>
+				<div class="demo"><a class="button" href="#">Hover me</a></div>
+			</article>
+
+			<!-- Example 11: making an element transparent and adding a shadow. -->
+			<article class="lesson">
+				<h2>11. Opacity and Shadow</h2>
+				<p><code>opacity</code> controls transparency. <code>box-shadow</code> adds a shadow around a box.</p>
+				<div class="demo" style="opacity: 0.8; box-shadow: 5px 5px 8px #78909c;">Transparent shadow</div>
+			</article>
+
+			<!-- Example 12: showing that a page can adapt to screen size. -->
+			<article class="lesson">
+				<h2>12. Responsive Design</h2>
+				<p><code>@media</code> changes styles for different screen sizes, so the page works on phones and computers.</p>
+				<div class="demo responsive-demo">Resize the browser window</div>
+			</article>
+		</section>
+	</main>
+</body>
+</html>
