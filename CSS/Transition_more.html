@@ -1,0 +1,194 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>CSS Transition Properties</title>
+    <style>
+        * {
+            box-sizing: border-box;
+        }
+
+        body {
+            margin: 0;
+            font-family: Arial, sans-serif;
+            background: linear-gradient(135deg, #f5f7fa, #c3cfe2);
+            color: #222;
+        }
+
+        .container {
+            max-width: 1100px;
+            margin: 50px auto;
+            padding: 20px;
+        }
+
+        h1 {
+            text-align: center;
+            margin-bottom: 25px;
+            color: #1b1b1b;
+        }
+
+        .demo-grid {
+            display: grid;
+            grid-template-columns: repeat(auto-fit, minmax(220px, 1fr));
+            gap: 25px;
+        }
+
+        .box,
+        .button,
+        .circle,
+        .card {
+            transition-property: all;
+            transition-duration: 1s;
+            transition-timing-function: ease;
+            transition-delay: 0s;
+        }
+
+        .box {
+            width: 180px;
+            height: 180px;
+            margin: 0 auto;
+            background: linear-gradient(45deg, #ff7f50, #ffb347);
+            border: 3px solid #222;
+            border-radius: 12px;
+            box-shadow: 0 8px 16px rgba(0, 0, 0, 0.2);
+        }
+
+        .box:hover {
+            width: 220px;
+            height: 220px;
+            background: linear-gradient(45deg, #3a86ff, #8338ec);
+            transform: rotate(20deg) scale(1.08);
+            border-radius: 30px;
+        }
+
+        .button {
+            display: inline-block;
+            padding: 15px 30px;
+            margin: 10px auto 0;
+            background-color: #ff6b6b;
+            color: white;
+            font-weight: bold;
+            border-radius: 8px;
+            text-decoration: none;
+            box-shadow: 0 8px 18px rgba(255, 107, 107, 0.35);
+            transition: all 0.6s ease-in-out;
+        }
+
+        .button:hover {
+            background-color: #2ec4b6;
+            transform: translateY(-8px) scale(1.05);
+            box-shadow: 0 16px 25px rgba(46, 196, 182, 0.45);
+        }
+
+        .circle {
+            width: 140px;
+            height: 140px;
+            margin: 0 auto;
+            background: #ffd166;
+            border-radius: 50%;
+            border: 4px solid #111;
+            transition-property: transform, background-color, border-radius;
+            transition-duration: 1.2s, 1.2s, 0.8s;
+            transition-timing-function: ease-in-out, linear, ease;
+            transition-delay: 0.1s, 0s, 0.2s;
+        }
+
+        .circle:hover {
+            transform: translateY(-12px) rotate(180deg);
+            background: #06d6a0;
+            border-radius: 25%;
+        }
+
+        .card {
+            width: 200px;
+            margin: 0 auto;
+            padding: 20px;
+            background: white;
+            border: 2px solid #ddd;
+            border-radius: 16px;
+            text-align: center;
+            box-shadow: 0 10px 20px rgba(0, 0, 0, 0.08);
+            transition: all 0.8s cubic-bezier(0.25, 0.8, 0.25, 1);
+        }
+
+        .card:hover {
+            transform: rotate(-8deg) scale(1.08);
+            background: #f1f5f9;
+            box-shadow: 0 18px 30px rgba(0, 0, 0, 0.18);
+            border-color: #4f46e5;
+        }
+
+        .info {
+            margin-top: 30px;
+            padding: 20px;
+            background: rgba(255, 255, 255, 0.7);
+            border-left: 6px solid #4f46e5;
+            border-radius: 10px;
+            line-height: 1.7;
+        }
+
+        .info h2 {
+            margin-top: 0;
+        }
+
+        .code-box {
+            background: #111827;
+            color: #e5e7eb;
+            padding: 18px;
+            border-radius: 10px;
+            overflow-x: auto;
+            margin-top: 20px;
+        }
+    </style>
+</head>
+<body>
+    <div class="container">
+        <h1>CSS Transition Properties</h1>
+
+        <div class="demo-grid">
+            <div>
+                <div class="box"></div>
+            </div>
+
+            <div style="text-align: center;">
+                <a href="#" class="button">Hover Me</a>
+            </div>
+
+            <div>
+                <div class="circle"></div>
+            </div>
+
+            <div>
+                <div class="card">
+                    <h3>Card</h3>
+                    <p>Transition Demo</p>
+                </div>
+            </div>
+        </div>
+
+        <div class="info">
+            <h2>Important Transition Properties</h2>
+            <p>
+                <strong>transition-property:</strong> tells which CSS property will animate.<br>
+                <strong>transition-duration:</strong> sets how long the animation lasts.<br>
+                <strong>transition-timing-function:</strong> controls the speed pattern like ease, linear, ease-in, ease-out, ease-in-out.<br>
+                <strong>transition-delay:</strong> adds a waiting time before the transition starts.<br>
+                <strong>transition:</strong> shorthand for all transition properties in one line.
+            </p>
+        </div>
+
+        <div class="code-box">
+            <pre>
+.element {
+    transition-property: width, height, background-color;
+    transition-duration: 1s, 0.8s, 1.2s;
+    transition-timing-function: ease-in-out, linear, ease;
+    transition-delay: 0.2s, 0s, 0.5s;
+    transition: all 1s ease-in-out 0.2s;
+}
+            </pre>
+        </div>
+    </div>
+</body>
+</html>
