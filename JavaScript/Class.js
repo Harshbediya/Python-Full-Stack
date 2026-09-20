@@ -78,19 +78,18 @@
 
 // {
 //   let city = "Pune";
-//   console.log("Inside block: value of city is", city);
-// }
+// } 
 // console.log("Outside block: value of city is", city);
 
 
-// let country = "India";
+let country = "India";
 
-// function displayCountry() {
-//   console.log("Inside function: value of country is", country);
-// }
+function displayCountry() {
+  console.log("Inside function: value of country is", country);
+}
 
-// displayCountry();
-// console.log("Outside function: value of country is", country);
+displayCountry();
+console.log("Outside function: value of country is", country);
 
 
 // function displayCity() {
@@ -108,43 +107,43 @@
 // const is block-scoped and function-scoped.
 // A const variable can be used outside a block only if it was declared outside that block.
 
-const place = "Bangalore";
+// const place = "Bangalore";
 
-// Here, place is accessible because it is declared outside the block.
-{
-  console.log("Inside block: value of place is", place);
-}
+// // Here, place is accessible because it is declared outside the block.
+// {
+//   console.log("Inside block: value of place is", place);
+// }
 
-// This is also valid because place was declared outside the block.
-console.log("Outside block: value of place is", place);
+// // This is also valid because place was declared outside the block.
+// console.log("Outside block: value of place is", place);
 
-// city is declared inside this block, so it cannot be used outside.
-{
-  const city = "Pune";
-  console.log("Inside block: value of city is", city);
-}
+// // city is declared inside this block, so it cannot be used outside.
+// {
+//   const city = "Pune";
+//   console.log("Inside block: value of city is", city);
+// }
 
-// This will give an error because city is block-scoped.
-// console.log("Outside block: value of city is", city);
+// // This will give an error because city is block-scoped.
+// // console.log("Outside block: value of city is", city);
 
-// country is declared outside the function, so it can be used inside the function.
-const country = "India";
+// // country is declared outside the function, so it can be used inside the function.
+// const country = "India";
 
-function displayCountry() {
-  console.log("Inside function: value of country is", country);
-}
+// function displayCountry() {
+//   console.log("Inside function: value of country is", country);
+// }
 
-// This works because country is outside the function.
-displayCountry();
-console.log("Outside function: value of country is", country);
+// // This works because country is outside the function.
+// displayCountry();
+// console.log("Outside function: value of country is", country);
 
-// state is declared inside the function, so it cannot be used outside.
-function displayCity() {
-  const state = "Maharashtra";
-  console.log("Inside function: value of state is", state);
-}
+// // state is declared inside the function, so it cannot be used outside.
+// function displayCity() {
+//   const state = "Maharashtra";
+//   console.log("Inside function: value of state is", state);
+// }
 
-displayCity();
+// displayCity();
 
 // This will give an error because state is function-scoped.
 // console.log("Outside function: value of state is", state);
